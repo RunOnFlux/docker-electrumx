@@ -1,4 +1,5 @@
-FROM python:3.7-alpine3.10
+
+FROM python:3.7-alpine3.11
 LABEL maintainer="Tadeas Kmenta <tadeas.kmenta@zel.cash>"
 
 COPY ./bin /usr/local/bin
@@ -7,7 +8,7 @@ COPY ./VERSION /tmp
 RUN VERSION=$(cat /tmp/VERSION) && \
     chmod a+x /usr/local/bin/* && \
     apk add --no-cache git build-base openssl && \
-    apk add --no-cache --repository http://dl-cdn.alpinelinux.org/alpine/edge/main leveldb-dev && \
+    apk add --no-cache --repository http://dl-cdn.alpinelinux.org/alpine/v3.11/main leveldb-dev && \
     apk add --no-cache --repository http://dl-cdn.alpinelinux.org/alpine/edge/testing rocksdb-dev && \
     pip install aiohttp pylru plyvel websockets python-rocksdb groestlcoin_hash x16r_hash git+https://github.com/TheTrunk/x22i_hash && \
     git clone https://github.com/TheTrunk/electrumx.git && \
