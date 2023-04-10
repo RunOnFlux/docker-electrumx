@@ -1,6 +1,6 @@
 
 FROM python:3.7-alpine3.11
-LABEL maintainer="Tadeas Kmenta <tadeas.kmenta@zel.cash>"
+LABEL maintainer="Tadeas Kmenta <tadeas@runonflux.io>"
 
 COPY ./bin /usr/local/bin
 COPY ./VERSION /tmp
@@ -11,7 +11,7 @@ RUN VERSION=$(cat /tmp/VERSION) && \
     apk add --no-cache --repository http://dl-cdn.alpinelinux.org/alpine/v3.11/main leveldb-dev && \
     apk add --no-cache --repository http://dl-cdn.alpinelinux.org/alpine/edge/testing rocksdb-dev && \
     pip install aiohttp pylru plyvel websockets python-rocksdb groestlcoin_hash x16r_hash git+https://github.com/TheTrunk/x22i_hash && \
-    git clone https://github.com/TheTrunk/electrumx.git && \
+    git clone https://github.com/RunOnFlux/electrumx.git && \
     cd electrumx && \
     python setup.py install && \
     apk del git build-base && \
