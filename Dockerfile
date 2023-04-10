@@ -8,7 +8,7 @@ RUN VERSION=$(cat /tmp/VERSION) && \
     chmod a+x /usr/local/bin/* && \
     apk add --no-cache git build-base openssl && \
     apk add --no-cache --repository http://dl-cdn.alpinelinux.org/alpine/v3.11/main leveldb-dev && \
-    apk add --no-cache --repository http://dl-cdn.alpinelinux.org/alpine/v3.11/testing rocksdb-dev && \
+    apk add --no-cache --repository http://dl-cdn.alpinelinux.org/alpine/edge/community rocksdb-dev && \
     pip install aiohttp pylru plyvel websockets python-rocksdb uvloop groestlcoin_hash x16r_hash git+https://github.com/TheTrunk/x22i_hash && \
     git clone https://github.com/RunOnFlux/electrumx.git && \
     cd electrumx && \
