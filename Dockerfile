@@ -1,4 +1,4 @@
-FROM python:3.7-alpine3.11
+FROM python:3.7-alpine
 LABEL maintainer="Tadeas Kmenta <tadeas@runonflux.io>"
 
 COPY ./bin /usr/local/bin
